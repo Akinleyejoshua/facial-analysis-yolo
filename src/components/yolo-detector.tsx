@@ -28,7 +28,6 @@ function App() {
   const [modelLoaded, setModelLoaded] = useState(false);
   const [confidenceThreshold, setConfidenceThreshold] = useState(0.5);
   const [error, setError] = useState<string>('');
-  const [videoSize, setVideoSize] = useState({ width: 0, height: 0 });
 
   const sessionRef = useRef<any>(null);
   const animationRef = useRef<number>(0);
@@ -51,10 +50,6 @@ function App() {
   useEffect(() => {
     const updateVideoSize = () => {
       if (videoRef.current) {
-        setVideoSize({
-          width: videoRef.current.clientWidth,
-          height: videoRef.current.clientHeight
-        });
       }
     };
 
